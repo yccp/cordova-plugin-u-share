@@ -1,12 +1,9 @@
 #import <Cordova/CDVPlugin.h>
-#import <YWFeedbackFMWK/YWFeedbackKit.h>
-#import <YWFeedbackFMWK/YWFeedbackViewController.h>
+#import <UMSocialCore/UMSocialCore.h>
 
-@interface AlicloudFeedback : CDVPlugin
+@interface UShare : CDVPlugin
 
-@property (nonatomic, strong) YWFeedbackKit *feedbackKit;
-
-- (void)open:(CDVInvokedUrlCommand*)command;
-- (void)fetchUnreadCount:(CDVInvokedUrlCommand *)command;
+- (void)setup:(CDVInvokedUrlCommand*)command;
+- (void)share:(CDVInvokedUrlCommand *)command;
 
 @end
