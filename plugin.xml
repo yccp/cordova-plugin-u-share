@@ -30,7 +30,7 @@
     <source-file src="src/ios/UShare.m" />
   </platform>
   <platform name="android">
-    <config-file target="res/xml/config.xml" parent="/*">
+    <!-- <config-file target="res/xml/config.xml" parent="/*">
       <feature name="UShare">
         <param name="android-package" value="news.chen.yu.ionic.UShare"/>
       </feature>
@@ -59,6 +59,6 @@
     <resource-file src="src/android/libs/alicloud-android-monitor-2.5.1.1_for_bc_proguard.jar" target="libs/alicloud-android-monitor-2.5.1.1_for_bc_proguard.jar" />
     <resource-file src="src/android/libs/alicloud-android-utils-1.0.3.jar" target="libs/alicloud-android-utils-1.0.3.jar" />
     <resource-file src="src/android/libs/utdid4all-1.1.5.3_proguard.jar" target="libs/utdid4all-1.1.5.3_proguard.jar" />
-    <source-file src="src/android/UShare.java" target-dir="src/news/chen/yu/ionic" />
+    <source-file src="src/android/UShare.java" target-dir="src/news/chen/yu/ionic" /> -->
   </platform>
 </plugin>
