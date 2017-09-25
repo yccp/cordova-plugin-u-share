@@ -33,37 +33,9 @@
                                                             options:NSJSONReadingMutableContainers
                                                               error:&jsonError];
     NSLog(@"你的分享参数%@", options);
-    __weak __typeof__(self) weakSelf = self;
-
-    
-    [self.feedbackKit makeFeedbackViewControllerWithCompletionBlock:^(YWFeedbackViewController *viewController, NSError *error) {
-        if (viewController != nil) {
-            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
-            CATransition *openAnimation = [CATransition animation];
-            [openAnimation setDuration:0.5];
-            [openAnimation setType: kCATransitionPush];
-            [openAnimation setSubtype:kCATransitionFromRight];
-            [openAnimation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault]];
-            [weakSelf.viewController presentViewController:nav animated:NO completion:nil];
-            [weakSelf.viewController.view.window.layer addAnimation:openAnimation forKey:nil];
-            
-            CATransition *closeAnimation = [CATransition animation];
-            [closeAnimation setDuration:0.5];
-            [closeAnimation setType: kCATransitionPush];
-            [closeAnimation setSubtype:kCATransitionFromLeft];
-            [closeAnimation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault]];
-            [viewController setCloseBlock:^(UIViewController *aParentController){
-                [aParentController dismissViewControllerAnimated:NO completion:nil];
-                [aParentController.view.window.layer addAnimation:closeAnimation forKey:nil];
-            }];
-            
-            CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-            [weakSelf.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-        } else {
-            CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:error.userInfo];
-            [weakSelf.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-        }
-    }];
+    // ...
+    // 返回成功结果
+    [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] callbackId:command.callbackId];
 }
 
 @end
