@@ -8,8 +8,8 @@
   <js-module src="www/UShare.js" name="UShare">
     <clobbers target="UShare" />
   </js-module>
-  <preference name="APP_KEY" />
-  <preference name="APP_SECRET" />
+  <preference name="IOS_KEY" />
+  <preference name="ANDROID_KEY" />
   <platform name="ios">
     <pods-config ios-min-version="9.0" use-frameworks="true">
       <source url="https://github.com/CocoaPods/Specs.git"/>
@@ -20,8 +20,8 @@
       <feature name="UShare">
         <param name="ios-package" value="UShare" />
       </feature>
-      <preference name="APP_KEY" value="$APP_KEY" />
-      <preference name="APP_SECRET" value="$APP_SECRET" />
+      <preference name="IOS_KEY" value="$IOS_KEY" />
+      <preference name="ANDROID_KEY" value="$ANDROID_KEY" />
     </config-file>
     <!-- <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
       <string>访问相机</string>
@@ -34,8 +34,8 @@
       <feature name="UShare">
         <param name="android-package" value="news.chen.yu.ionic.UShare"/>
       </feature>
-      <preference name="APP_KEY" value="$APP_KEY" />
-      <preference name="APP_SECRET" value="$APP_SECRET" />
+      <preference name="IOS_KEY" value="$IOS_KEY" />
+      <preference name="ANDROID_KEY" value="$ANDROID_KEY" />
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest">
       <uses-permission android:name="android.permission.INTERNET" />

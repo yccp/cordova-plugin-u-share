@@ -1,16 +1,16 @@
-# 阿里云移动用户反馈 cordova 插件
+# 友盟社会化分享 cordova 插件
 
 > 支持ios, android
-开通服务: [https://www.aliyun.com/product/feedback](https://www.aliyun.com/product/feedback)
+开通服务: [http://mobile.umeng.com/social](http://mobile.umeng.com/social)
 
 ## 安装
 
 ```
-cordova plugin add cordova-plugin-alicloud-feedback --variable APP_KEY=你的KEY --variable APP_SECRET=你的SECRET --save
+cordova plugin add cordova-plugin-u-share --variable IOS_KEY=你的IOS_KEY --variable ANDROID_KEY=你的ANDROID_SECRET --save
 ```
 或
 ```
-ionic cordova plugin add cordova-plugin-alicloud-feedback --variable APP_KEY=你的KEY --variable APP_SECRET=你的SECRET
+ionic cordova plugin add cordova-plugin-u-share --variable IOS_KEY=你的IOS_KEY --variable ANDROID_KEY=你的ANDROID_SECRET
 ```
 
 > 相关依赖
