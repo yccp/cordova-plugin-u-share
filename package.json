@@ -1,5 +1,5 @@
 {
-  "name": "cordova-plugin-alicloud-feedback",
+  "name": "cordova-plugin-u-share",
   "version": "1.0.1",
   "description": "AlicloudFeedback for cordova app",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "author": "Yu Chen",
   "license": "ISC",
   "cordova": {
-    "id": "cordova-plugin-alicloud-feedback",
+    "id": "cordova-plugin-u-share",
     "platforms": [
       "ios",
       "android"
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yccp/cordova-plugin-alicloud-feedback.git"
+    "url": "git+https://github.com/yccp/cordova-plugin-u-share.git"
   },
   "keywords": [
     "cordova",
@@ -28,7 +28,7 @@
     "cordova-android"
   ],
   "bugs": {
-    "url": "https://github.com/yccp/cordova-plugin-alicloud-feedback/issues"
+    "url": "https://github.com/yccp/cordova-plugin-u-share/issues"
   },
-  "homepage": "https://github.com/yccp/cordova-plugin-alicloud-feedback#readme"
+  "homepage": "https://github.com/yccp/cordova-plugin-u-share#readme"
 }
