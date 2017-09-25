@@ -11,10 +11,6 @@
   <preference name="IOS_KEY" />
   <preference name="ANDROID_KEY" />
   <platform name="ios">
-    <pods-config ios-min-version="9.0" use-frameworks="true">
-      <source url="https://github.com/CocoaPods/Specs.git"/>
-      <source url="https://github.com/aliyun/aliyun-specs.git"/>
-    </pods-config>
     <pod name="UMengUShare/UI" />
     <config-file target="config.xml" parent="/*">
       <feature name="UShare">
