@@ -4,6 +4,23 @@
 
 - (void)setup:(CDVInvokedUrlCommand *)command
 {
+    // 获取参数
+    NSError* jsonError;
+    NSString* arguments = [command argumentAtIndex:0];
+    NSData* objectData = [arguments dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* options = [NSJSONSerialization JSONObjectWithData:objectData
+                                                            options:NSJSONReadingMutableContainers
+                                                              error:&jsonError];
+    NSLog(@"你的分享参数%@", options);
+    
+    NSDictionary* wechat = [options objectForKey:@"wechat"];
+    if(wechat) {
+        NSString* key = wechat[@"key"];
+        NSString* secret = wechat[@"secret"];
+        NSLog(@"%@ %@", key, secret);
+        // ...
+    }
+
     // 获取IOS的Appkey
     NSString *appKey = [[self.commandDelegate settings] objectForKey:@"ios_key"];
     NSLog(@"你的appKey为%@", appKey);
