@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-u-share",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Umeng Share for cordova app",
   "main": "index.js",
   "scripts": {
