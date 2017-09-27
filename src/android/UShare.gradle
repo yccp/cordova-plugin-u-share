@@ -5,8 +5,10 @@ repositories {
 }
 
 dependencies {
-    compile(name: 'alicloud-android-feedback-3.1.0', ext: 'aar')
-    compile files('libs/alicloud-android-monitor-2.5.1.1_for_bc_proguard.jar')
-    compile files('libs/utdid4all-1.1.5.3_proguard.jar')
-    compile files('libs/alicloud-android-utils-1.0.3.jar')
+    compile files('libs/umeng_shareboard_widget.jar')
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_shareboard.jar')
+    compile files('libs/umeng_social_shareview.jar')
+    compile files('libs/umeng_social_tool.jar')
 }

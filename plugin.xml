@@ -8,53 +8,70 @@
   <js-module src="www/UShare.js" name="UShare">
     <clobbers target="UShare" />
   </js-module>
-  <preference name="IOS_KEY" />
-  <preference name="ANDROID_KEY" />
+  <preference name="USHARE_IOS_KEY" />
+  <preference name="USHARE_ANDROID_KEY" />
   <platform name="ios">
     <pod name="UMengUShare/UI" />
     <config-file target="config.xml" parent="/*">
       <feature name="UShare">
         <param name="ios-package" value="UShare" />
+        <param name="onload" value="true" />
       </feature>
-      <preference name="IOS_KEY" value="$IOS_KEY" />
-      <preference name="ANDROID_KEY" value="$ANDROID_KEY" />
+      <preference name="USHARE_IOS_KEY" value="$USHARE_IOS_KEY" />
     </config-file>
-    <!-- <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
-      <string>访问相机</string>
-    </config-file> -->
+    <!-- <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes"><string>访问相机</string></config-file> -->
     <header-file src="src/ios/UShare.h" />
     <source-file src="src/ios/UShare.m" />
   </platform>
   <platform name="android">
-    <!-- <config-file target="res/xml/config.xml" parent="/*">
+    <config-file target="res/xml/config.xml" parent="/*">
       <feature name="UShare">
         <param name="android-package" value="news.chen.yu.ionic.UShare"/>
+        <param name="onload" value="true" />
       </feature>
-      <preference name="IOS_KEY" value="$IOS_KEY" />
-      <preference name="ANDROID_KEY" value="$ANDROID_KEY" />
+      <!-- <preference name="USHARE_ANDROID_KEY" value="$USHARE_ANDROID_KEY" /> -->
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest">
-      <uses-permission android:name="android.permission.INTERNET" />
-      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
       <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
       <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
       <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <activity android:name="news.chen.yu.ionic.UShare">
-        <intent-filter>
-          <action android:name="news.chen.yu.ionic.UShare" />
-          <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-      </activity>
+      <meta-data android:name="UMENG_APPKEY" android:value="$USHARE_ANDROID_KEY"></meta-data>
+      <activity android:name="com.umeng.socialize.editorpage.ShareActivity" android:excludeFromRecents="true" android:theme="@style/Theme.UMDefault"></activity>
     </config-file>
-    <framework src="com.android.support:support-v4:+" value="gradle" />
     <framework src="src/android/UShare.gradle" custom="true" type="gradleReference" />
-    <resource-file src="src/android/libs/alicloud-android-feedback-3.1.0.aar" target="libs/alicloud-android-feedback-3.1.0.aar" />
-    <resource-file src="src/android/libs/alicloud-android-monitor-2.5.1.1_for_bc_proguard.jar" target="libs/alicloud-android-monitor-2.5.1.1_for_bc_proguard.jar" />
-    <resource-file src="src/android/libs/alicloud-android-utils-1.0.3.jar" target="libs/alicloud-android-utils-1.0.3.jar" />
-    <resource-file src="src/android/libs/utdid4all-1.1.5.3_proguard.jar" target="libs/utdid4all-1.1.5.3_proguard.jar" />
-    <source-file src="src/android/UShare.java" target-dir="src/news/chen/yu/ionic" /> -->
+    <resource-file src="src/android/main/libs/umeng_social_api.jar" target="libs/umeng_social_api.jar" />
+    <resource-file src="src/android/main/libs/umeng_social_net.jar" target="libs/umeng_social_net.jar" />
+    <resource-file src="src/android/main/libs/umeng_social_tool.jar" target="libs/umeng_social_tool.jar" />
+    <resource-file src="src/android/shareboard/libs/umeng_shareboard_widget.jar" target="libs/umeng_shareboard_widget.jar" />
+    <resource-file src="src/android/shareboard/libs/umeng_social_shareboard.jar" target="libs/umeng_social_shareboard.jar" />
+    <resource-file src="src/android/shareview/libs/umeng_social_shareview.jar" target="libs/umeng_social_shareview.jar" />
+    <resource-file src="src/android/main/res/drawable/umeng_socialize_back_icon.png" target="res/drawable/umeng_socialize_back_icon.png" />
+    <resource-file src="src/android/main/res/drawable/umeng_socialize_btn_bg.xml" target="res/drawable/umeng_socialize_btn_bg.xml" />
+    <resource-file src="src/android/main/res/drawable/umeng_socialize_copy.png" target="res/drawable/umeng_socialize_copy.png" />
+    <resource-file src="src/android/main/res/drawable/umeng_socialize_copyurl.png" target="res/drawable/umeng_socialize_copyurl.png" />
+    <resource-file src="src/android/main/res/drawable/umeng_socialize_delete.png" target="res/drawable/umeng_socialize_delete.png" />
+    <resource-file src="src/android/main/res/drawable/umeng_socialize_edit_bg.xml" target="res/drawable/umeng_socialize_edit_bg.xml" />
+    <resource-file src="src/android/main/res/drawable/umeng_socialize_menu_default.png" target="res/drawable/umeng_socialize_menu_default.png" />
+    <resource-file src="src/android/main/res/drawable/umeng_socialize_more.png" target="res/drawable/umeng_socialize_more.png" />
+    <resource-file src="src/android/main/res/drawable/umeng_socialize_share_music.png" target="res/drawable/umeng_socialize_share_music.png" />
+    <resource-file src="src/android/main/res/drawable/umeng_socialize_share_video.png" target="res/drawable/umeng_socialize_share_video.png" />
+    <resource-file src="src/android/main/res/drawable/umeng_socialize_share_web.png" target="res/drawable/umeng_socialize_share_web.png" />
+    <resource-file src="src/android/main/res/layout/umeng_socialize_oauth_dialog.xml" target="res/layout/umeng_socialize_oauth_dialog.xml" />
+    <resource-file src="src/android/main/res/layout-sw550dp-large/umeng_socialize_oauth_dialog.xml" target="res/layout-sw550dp-large/umeng_socialize_oauth_dialog.xml" />
+    <resource-file src="src/android/main/res/values/umeng_socialize_colors.xml" target="res/values/umeng_socialize_colors.xml" />
+    <resource-file src="src/android/main/res/values/umeng_socialize_strings.xml" target="res/values/umeng_socialize_strings.xml" />
+    <resource-file src="src/android/main/res/values/umeng_socialize_style.xml" target="res/values/umeng_socialize_style.xml" />
+    <resource-file src="src/android/shareboard/res/layout/socialize_share_menu_item.xml" target="res/layout/socialize_share_menu_item.xml" />
+    <resource-file src="src/android/shareview/res/layout/umeng_socialize_share.xml" target="res/layout/umeng_socialize_share.xml" />
+    <resource-file src="src/android/shareview/res/values/umeng_socialize_shareview_strings.xml" target="res/values/umeng_socialize_shareview_strings.xml" />
+    <source-file src="src/android/UShare.java" target-dir="src/news/chen/yu/ionic" />
   </platform>
 </plugin>

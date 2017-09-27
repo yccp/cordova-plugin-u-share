@@ -10,10 +10,7 @@ module.exports = {
    * @param {Function} successCallback ['success']
    * @param {Function} errorCallback ['fail'|'cancel'|'invalid']
    */
-  open: function (param, successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, "UShare", "setup", [JSON.stringify(param)]);
-  },
-  fetchUnreadCount: function (successCallback, errorCallback) {
+  share: function (param, successCallback, errorCallback) {
     cordova.exec(successCallback, errorCallback, "UShare", "share", [JSON.stringify(param)]);
   }
 };

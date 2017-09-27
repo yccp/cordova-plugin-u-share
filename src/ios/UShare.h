@@ -3,7 +3,6 @@
 
 @interface UShare : CDVPlugin
 
-- (void)setup:(CDVInvokedUrlCommand*)command;
 - (void)share:(CDVInvokedUrlCommand *)command;
 
 @end
