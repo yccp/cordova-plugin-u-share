@@ -1,4 +1,3 @@
-// AlicloudFeedback
 // Author: Yu Chen <yu.chen@live.ie>
 // License: Apache License 2.0
 

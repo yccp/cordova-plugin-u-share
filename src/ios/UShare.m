@@ -13,7 +13,7 @@
 {
     // Put here the code that should be on the AppDelegate.m
     // 获取IOS的Appkey
-    NSString *appKey = [[self.commandDelegate settings] objectForKey:@"ios_key"];
+    NSString *appKey = [[self.commandDelegate settings] objectForKey:@"ushare_ios_key"];
     NSLog(@"你的appKey为%@", appKey);
     
     /* 设置友盟appkey */
