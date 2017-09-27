@@ -6,11 +6,11 @@
 ## 安装
 
 ```
-cordova plugin add cordova-plugin-u-share --variable IOS_KEY=你的IOS_KEY --variable ANDROID_KEY=你的ANDROID_SECRET --save
+cordova plugin add cordova-plugin-u-share --variable IOS_KEY=你的IOS_KEY --variable ANDROID_KEY=你的ANDROID_KEY --save
 ```
 或
 ```
-ionic cordova plugin add cordova-plugin-u-share --variable IOS_KEY=你的IOS_KEY --variable ANDROID_KEY=你的ANDROID_SECRET
+ionic cordova plugin add cordova-plugin-u-share --variable IOS_KEY=你的IOS_KEY --variable ANDROID_KEY=你的ANDROID_KEY
 ```
 
 > 相关依赖
@@ -26,20 +26,15 @@ ionic cordova plugin add cordova-plugin-cocoapod-support
 ## 使用方法
 >打开反馈页面
 ```js
-window.AlicloudFeedback.open({
-  // 自定义参数，目前仅ios有用
-}, function() {
-  console.log('成功');
-}, function(e) {
+window.UShare.share({
+  image: 'https://xxx.png', // 缩略图 必须为https协议
+  url: 'http://xxx.xxx/xxx', // 链接
+  title: 'xxx', // 标题
+  desc: 'xxx' // 简介
+}, success => {
+  console.log(success); // success为bool类型
+}, e => {
   console.error(e);
 });
 
-```
-> 获取未读数量
-```js
-window.AlicloudFeedback.fetchUnreadCount(function(x) {
-  console.log(x);
-}, function(e) {
-  console.error(e);
-});
 ```
