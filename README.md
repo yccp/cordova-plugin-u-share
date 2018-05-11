@@ -6,11 +6,11 @@
 ## 安装
 
 ```
-cordova plugin add cordova-plugin-u-share --variable IOS_KEY=你的IOS_KEY --variable ANDROID_KEY=你的ANDROID_KEY --save
+cordova plugin add cordova-plugin-u-share --variable USHARE_IOS_KEY=你的IOS_KEY --variable USHARE_ANDROID_KEY=你的ANDROID_KEY --save
 ```
 或
 ```
-ionic cordova plugin add cordova-plugin-u-share --variable IOS_KEY=你的IOS_KEY --variable ANDROID_KEY=你的ANDROID_KEY
+ionic cordova plugin add cordova-plugin-u-share --variable USHARE_IOS_KEY=你的IOS_KEY --variable USHARE_ANDROID_KEY=你的ANDROID_KEY
 ```
 
 > 相关依赖
